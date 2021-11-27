@@ -1,0 +1,7 @@
+# Copy the following into global .gitconfig
+[alias]
+        tree = log --graph --decorate --pretty=oneline --abbrev-commit
+        co = checkout
+        br = branch
+        ci = commit
+        st = status
