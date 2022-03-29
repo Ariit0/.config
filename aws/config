@@ -1,0 +1,10 @@
+[default]
+output = json
+region = ap-southeast-2
+cli_auto_prompt = on-partial
+
+# Personal AWS account credentials
+[profile ari-sdk]
+region = ap-southeast-2
+role_arn = <INSERT ROLE ARN HERE>
+source_profile = ari-identity
