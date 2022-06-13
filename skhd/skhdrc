@@ -162,10 +162,10 @@ hyper - 3 : index=3; eval "$(yabai -m query --spaces | jq --argjson index "${ind
 ctrl + alt + cmd - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 
 # recycle through windows to focus
-# 0x2F = ,
+# 0x2F = .
 # 0x2B = ,
-ctrl + alt + cmd - 0x2F : yabai -m window --focus next 
-ctrl + alt + cmd - 0x2B : yabai -m window --focus prev
+ctrl + alt - 0x2F : yabai -m window --focus prev || yabai -m window --focus last
+ctrl + alt - 0x2B : yabai -m window --focus next || yabai -m window --focus first
 
 # move windows
 ctrl + alt + cmd - left : yabai -m window --swap west
@@ -173,6 +173,22 @@ ctrl + alt + cmd - up : yabai -m window --swap north
 ctrl + alt + cmd - right : yabai -m window --swap east
 ctrl + alt + cmd - down : yabai -m window --swap south
 
+# increase window size
+ctrl + alt - left : \
+    yabai -m window --resize left:-20:0 ; \
+    yabai -m window --resize right:-20:0
+
+ctrl + alt - down : \
+    yabai -m window --resize bottom:0:20 ; \
+    yabai -m window --resize top:0:20
+
+ctrl + alt - up : \
+    yabai -m window --resize top:0:-20 ; \
+    yabai -m window --resize bottom:0:-20
+
+ctrl + alt - right : \
+    yabai -m window --resize right:20:0 ; \
+    yabai -m window --resize left:20:0
 
 # toggle float
 ctrl + alt + cmd - f : yabai -m window --toggle float
