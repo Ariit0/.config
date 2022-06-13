@@ -5,3 +5,4 @@
         br = branch
         ci = commit
         st = status
+        cp = cherry-pick --edit

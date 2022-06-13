@@ -1,0 +1,65 @@
+#!/usr/bin/env zsh
+
+# the scripting-addition must be loaded manually if
+# you are running yabai on macOS Big Sur. Uncomment
+# the following line to have the injection performed
+# when the config is executed during startup.
+#
+# for this to work you must configure sudo such that
+# it will be able to run the command without password
+#
+# see this wiki page for information:
+#  - https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release)
+#
+sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+
+# alias
+alias yc='yabai -m config'
+alias yr='yabai -m rule --add'
+
+
+# float windows
+yr app="^System Preferences$" sticky=on layer=above manage=off
+yr app="^System Information$" sticky=on layer=above manage=off
+yr app="^Finder$" sticky=on layer=above manage=off
+yr app="^Disk Utility$" sticky=on layer=above manage=off
+yr app="^System Information$" sticky=on layer=above manage=off
+yr app="^Activity Monitor$" sticky=on layer=above manage=off
+yr app="^Docker Desktop$" sticky=on layer=above manage=off
+yr app="^Sourcetree$" sticky=on layer=above manage=off
+yr app="^React Native Debugger$" sticky=on layer=above manage=off
+yr app="^App Store$" sticky=on layer=above manage=off
+yr app="^GitKraken$" sticky=on layer=above manage=off
+
+# global settings
+yc mouse_follows_focus          on
+yc focus_follows_mouse          off
+yc window_origin_display        default
+yc window_placement             second_child
+yc window_topmost               off
+yc window_shadow                on
+yc window_border                on
+yc window_border_width          6
+yc active_window_border_color   0xff775759
+yc normal_window_border_color   0xff555555
+yc insert_feedback_color        0xffd75f5f
+yc split_ratio                  0.50
+yc auto_balance                 off
+yc mouse_modifier               fn
+yc mouse_action1                move
+yc mouse_action2                resize
+yc mouse_drop_action            swap
+
+# general space settings
+yc layout                       bsp
+yc top_padding                  08
+yc bottom_padding               08
+yc left_padding                 08
+yc right_padding                08
+yc window_gap                   10
+
+## If I close the active window, focus on any other visible window.
+#yabai -m signal --add event=window_destroyed action=""
+
+echo "yabai configuration loaded.."
