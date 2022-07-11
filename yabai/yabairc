@@ -31,6 +31,7 @@ yr app="^Sourcetree$" sticky=on layer=above manage=off
 yr app="^React Native Debugger$" sticky=on layer=above manage=off
 yr app="^App Store$" sticky=on layer=above manage=off
 yr app="^GitKraken$" sticky=on layer=above manage=off
+yr app="^Calculator$" sticky=on layer=above manage=off
 
 # global settings
 yc mouse_follows_focus          on

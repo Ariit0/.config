@@ -2,6 +2,7 @@
 # THE FOLLOWING IS AN EXPLANATION OF THE GRAMMAR THAT SKHD PARSES. #
 # ################################################################ #
 
+# use skhd --observe to find key value
 # A list of all built-in modifier and literal keywords can
 # be found at https://github.com/koekeishiya/skhd/issues/1
 #
@@ -88,6 +89,9 @@ ctrl + alt + cmd - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 # 0x2B = ,
 ctrl + alt - 0x2F : yabai -m window --focus prev || yabai -m window --focus last
 ctrl + alt - 0x2B : yabai -m window --focus next || yabai -m window --focus first
+
+# display focus cycle
+alt - tab : yabai -m display --focus next || yabai -m display --focus first 
 
 # move windows
 ctrl + alt + cmd - left : yabai -m window --swap west
