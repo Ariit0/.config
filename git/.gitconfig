@@ -1,6 +1,7 @@
 # Copy the following into global .gitconfig
 [alias]
         tree = log --graph --decorate --pretty=oneline --abbrev-commit
+        lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
         co = checkout
         br = branch
         ci = commit
