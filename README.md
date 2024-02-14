@@ -1,3 +1,3 @@
 # .ariito
 
-Personal Configurations for Development
+Personal Configurations for Development.

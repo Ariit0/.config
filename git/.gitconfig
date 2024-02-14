@@ -7,3 +7,7 @@
         ci = commit
         st = status
         cp = cherry-pick --edit
+[rerere]
+        enabled = true
+[fetch]
+        writeCommitGraph = true
